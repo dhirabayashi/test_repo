@@ -1,0 +1,19 @@
+name: test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run:
+    name: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: test name
+        id: test_id
+        run: |
+          added=$(git diff --name-only --diff-filter=A origin/main...HEAD -- test_dir/)
+          echo $added
