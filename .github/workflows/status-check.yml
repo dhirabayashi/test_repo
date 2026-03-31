@@ -1,0 +1,11 @@
+name: Status Check
+
+on:
+  pull_request:
+
+jobs:
+  status-check:
+    name: status-check
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "OK"
